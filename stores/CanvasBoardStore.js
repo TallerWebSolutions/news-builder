@@ -12,10 +12,15 @@ export default createStore({
   initialize(dispatcher) {
     this.items = [];
     this.current_layout = [];
+    this.newCounter = 0;
+    this.breakpoint = 'lg';
   },
   
   handleReceiveCanvasItems(items) {
     this.items = items;
+    this.current_layout = items[this.breakpoint];
+    this.newCounter = items[this.breakpoint].length;
+
     this.emitChange();
   },
 
@@ -32,7 +37,9 @@ export default createStore({
   getState() {
     return {
       items: this.items,
-      current_layout: this.current_layout
+      current_layout: this.current_layout,
+      newCounter: this.newCounter,
+      breakpoint: this.breakpoint
     };
   },
   
@@ -43,5 +50,7 @@ export default createStore({
   rehydrate(state) {
     this.items = state.items;
     this.current_layout = state.current_layout;
+    this.newCounter = state.newCounter;
+    this.breakpoint = state.breakpoint;
   }
 });
