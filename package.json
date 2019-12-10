@@ -47,7 +47,7 @@
     "react-grid-layout": "^0.7.0",
     "react-intl": "^1.0.2",
     "require-dir": "^0.1.0",
-    "serialize-javascript": "^1.0.0",
+    "serialize-javascript": "^2.1.2",
     "superagent": "^0.21.0"
   },
   "devDependencies": {
